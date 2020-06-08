@@ -11,12 +11,12 @@ var TEXT_HEIGHT = 20;
 var BAR_WIDTH = 40;
 var barHeight = CLOUD_HEIGHT - GAP - TEXT_HEIGHT - GAP;
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
   for (var i = 1; i < arr.length; i++) {
@@ -28,7 +28,7 @@ var getMaxElement = function(arr) {
   return maxElement;
 };
 
-window.renderStatistics = function(ctx, players, times) {
+window.renderStatistics = function (ctx, players, times) {
   ctx.font = '16px PT Mono';
   ctx.textBaseline = 'hanging';
   ctx.fillText('Ура вы победили!', CLOUD_X + 40, CLOUD_Y + 20);
