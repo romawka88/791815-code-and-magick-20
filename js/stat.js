@@ -45,8 +45,8 @@ window.renderStatistics = function (ctx, players, times) {
   var maxTime = getMaxElement(times);
 
   for (var i = 0; i < players.length; i++) {
-    ctx.fillText(players[i], CLOUD_X + GAP + (TEXT_WIDTH + GAP)*i, CLOUD_Y + GAP + barHeight + FONT_GAP);
+    ctx.fillText(players[i], CLOUD_X + GAP + (TEXT_WIDTH + GAP) * i, CLOUD_Y + GAP + barHeight + FONT_GAP);
     ctx.fillStyle = colors[i];
-    ctx.fillRect(CLOUD_X + GAP + (TEXT_WIDTH + GAP)*i, CLOUD_Y + GAP, BAR_WIDTH, (barHeight*times[i]) / maxTime);
+    ctx.fillRect(CLOUD_X + GAP + (TEXT_WIDTH + GAP) * i, CLOUD_Y + GAP, BAR_WIDTH, (barHeight * times[i]) / maxTime);
   }
 };
