@@ -16,12 +16,12 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 
 
 var setName = function () {
-  for ( var i = 0; i < WIZARD_NAMES.length; i++) {
-    for ( var j = 0; j < WIZARD_SURNAME.length; j++) {
+  for (var i = 0; i < WIZARD_NAMES.length; i++) {
+    for (var j = 0; j < WIZARD_SURNAME.length; j++) {
       return WIZARD_NAMES[i] + WIZARD_SURNAME[j];
     }
   }
-}
+};
 
 var wizards = [
   {
@@ -68,7 +68,7 @@ var wizards = [
 ];
 
 
-var renderWizard = function(wizard) {
+var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
 
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
@@ -76,12 +76,14 @@ var renderWizard = function(wizard) {
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
   return wizardElement;
-}
+};
+
 var fragment = document.createDocumentFragment();
 
 for (var i = 0; i < wizards.length; i++) {
   fragment.appendChild(renderWizard(wizards[i]));
 }
+
 similarListElement.appendChild(fragment);
 
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
