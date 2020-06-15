@@ -18,9 +18,10 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 var setName = function () {
   for (var i = 0; i < WIZARD_NAMES.length; i++) {
     for (var j = 0; j < WIZARD_SURNAME.length; j++) {
-      return WIZARD_NAMES[i] + WIZARD_SURNAME[j];
+      var name = WIZARD_NAMES[i] + WIZARD_SURNAME[j];
     }
   }
+  return name;
 };
 
 var wizards = [
