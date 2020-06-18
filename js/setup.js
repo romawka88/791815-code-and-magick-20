@@ -32,45 +32,45 @@ var setEyesColor = function () {
 
 var wizardsArray = [];
 for (var i = 0; i < 9; i++) {
-var wizards = [{
-  name: setName(),
-  coatColor: setCoatColor(),
-  eyesColor: setEyesColor()
+  var wizards = [{
+    name: setName(),
+    coatColor: setCoatColor(),
+    eyesColor: setEyesColor()
 },
 {
-  name: setName(),
-  coatColor: setCoatColor(),
-  eyesColor: setEyesColor()
+    name: setName(),
+    coatColor: setCoatColor(),
+    eyesColor: setEyesColor()
 },
 {
-  name: setName(),
-  coatColor: setCoatColor(),
-  eyesColor: setEyesColor()
+    name: setName(),
+    coatColor: setCoatColor(),
+    eyesColor: setEyesColor()
 },
 {
-  name: setName(),
-  coatColor: setCoatColor(),
-  eyesColor: setEyesColor()
+    name: setName(),
+    coatColor: setCoatColor(),
+    eyesColor: setEyesColor()
 },
 {
-  name: setName(),
-  coatColor: setCoatColor(),
-  eyesColor: setEyesColor()
+    name: setName(),
+    coatColor: setCoatColor(),
+    eyesColor: setEyesColor()
 },
 {
-  name: setName(),
-  coatColor: setCoatColor(),
-  eyesColor: setEyesColor()
+    name: setName(),
+    coatColor: setCoatColor(),
+    eyesColor: setEyesColor()
 },
 {
-  name: setName(),
-  coatColor: setCoatColor(),
-  eyesColor: setEyesColor()
+    name: setName(),
+    coatColor: setCoatColor(),
+    eyesColor: setEyesColor()
 },
 {
-  name: setName(),
-  coatColor: setCoatColor(),
-  eyesColor: setEyesColor()
+    name: setName(),
+    coatColor: setCoatColor(),
+    eyesColor: setEyesColor()
 }];
 wizardsArray.push(wizards[i]);
 }
