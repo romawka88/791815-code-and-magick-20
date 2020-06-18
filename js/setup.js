@@ -36,43 +36,43 @@ for (var i = 0; i < 9; i++) {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-},
-{
+  },
+  {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-},
-{
+  },
+  {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-},
-{
+  },
+  {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-},
-{
+  },
+  {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-},
-{
+  },
+  {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-},
-{
+  },
+  {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-},
-{
+  },
+  {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-}];
-wizardsArray.push(wizards[i]);
+  }];
+  wizardsArray.push(wizards[i]);
 }
 
 var renderWizard = function (wizard) {
@@ -87,8 +87,8 @@ var renderWizard = function (wizard) {
 
 var fragment = document.createDocumentFragment();
 
-for (var i = 0; i < wizards.length; i++) {
-  fragment.appendChild(renderWizard(wizards[i]));
+for (var j = 0; j < wizards.length; j++) {
+  fragment.appendChild(renderWizard(wizards[j]));
 }
 
 similarListElement.appendChild(fragment);
