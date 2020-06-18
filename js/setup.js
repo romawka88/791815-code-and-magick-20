@@ -16,58 +16,64 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 
 
 var setName = function () {
-  for (var i = 0; i < WIZARD_NAMES.length; i++) {
-    for (var j = 0; j < WIZARD_SURNAME.length; j++) {
-      var name = WIZARD_NAMES[i] + WIZARD_SURNAME[j];
-    }
-  }
-  return name;
+  var wizardName = WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + WIZARD_SURNAME[Math.floor(Math.random() * WIZARD_SURNAME.length)];
+  return wizardName;
 };
 
-var wizards = [
-  {
-    name: setName(),
-    coatColor: COAT_COLOR[0],
-    eyesColor: EYES_COLOR[0]
-  },
-  {
-    name: setName(),
-    coatColor: COAT_COLOR[1],
-    eyesColor: EYES_COLOR[1]
-  },
-  {
-    name: WIZARD_NAMES[2] + WIZARD_SURNAME[2],
-    coatColor: COAT_COLOR[2],
-    eyesColor: EYES_COLOR[2]
-  },
-  {
-    name: WIZARD_NAMES[3] + WIZARD_SURNAME[3],
-    coatColor: COAT_COLOR[3],
-    eyesColor: EYES_COLOR[3]
-  },
-  {
-    name: WIZARD_NAMES[4] + WIZARD_SURNAME[4],
-    coatColor: COAT_COLOR[4],
-    eyesColor: EYES_COLOR[4]
-  },
-  {
-    name: WIZARD_NAMES[5] + WIZARD_SURNAME[5],
-    coatColor: COAT_COLOR[5],
-    eyesColor: EYES_COLOR[0]
-  },
-  {
-    name: WIZARD_NAMES[6] + WIZARD_SURNAME[6],
-    coatColor: COAT_COLOR[0],
-    eyesColor: EYES_COLOR[1]
-  },
-  {
-    name: WIZARD_NAMES[7] + WIZARD_SURNAME[7],
-    coatColor: COAT_COLOR[1],
-    eyesColor: EYES_COLOR[2]
-  }
+var setCoatColor = function () {
+  var coatColor = COAT_COLOR[Math.floor(Math.random() * COAT_COLOR.length)];
+  return coatColor;
+};
 
-];
+var setEyesColor = function () {
+  var eyesColor = EYES_COLOR[Math.floor(Math.random() * EYES_COLOR.length)];
+  return eyesColor;
+};
 
+var wizardsArray = [];
+for (var i = 0; i < 9; i++) {
+var wizards = [{
+  name: setName(),
+  coatColor: setCoatColor(),
+  eyesColor: setEyesColor()
+},
+{
+  name: setName(),
+  coatColor: setCoatColor(),
+  eyesColor: setEyesColor()
+},
+{
+  name: setName(),
+  coatColor: setCoatColor(),
+  eyesColor: setEyesColor()
+},
+{
+  name: setName(),
+  coatColor: setCoatColor(),
+  eyesColor: setEyesColor()
+},
+{
+  name: setName(),
+  coatColor: setCoatColor(),
+  eyesColor: setEyesColor()
+},
+{
+  name: setName(),
+  coatColor: setCoatColor(),
+  eyesColor: setEyesColor()
+},
+{
+  name: setName(),
+  coatColor: setCoatColor(),
+  eyesColor: setEyesColor()
+},
+{
+  name: setName(),
+  coatColor: setCoatColor(),
+  eyesColor: setEyesColor()
+}];
+wizardsArray.push(wizards[i]);
+}
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
