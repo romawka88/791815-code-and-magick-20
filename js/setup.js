@@ -31,49 +31,16 @@ var setEyesColor = function () {
 };
 
 var wizardsArray = [];
-for (var i = 0; i < 9; i++) {
-  var wizards = [{
+for (var i = 0; i < 8; i++) {
+  var wizards = {
     name: setName(),
     coatColor: setCoatColor(),
     eyesColor: setEyesColor()
-  },
-  {
-    name: setName(),
-    coatColor: setCoatColor(),
-    eyesColor: setEyesColor()
-  },
-  {
-    name: setName(),
-    coatColor: setCoatColor(),
-    eyesColor: setEyesColor()
-  },
-  {
-    name: setName(),
-    coatColor: setCoatColor(),
-    eyesColor: setEyesColor()
-  },
-  {
-    name: setName(),
-    coatColor: setCoatColor(),
-    eyesColor: setEyesColor()
-  },
-  {
-    name: setName(),
-    coatColor: setCoatColor(),
-    eyesColor: setEyesColor()
-  },
-  {
-    name: setName(),
-    coatColor: setCoatColor(),
-    eyesColor: setEyesColor()
-  },
-  {
-    name: setName(),
-    coatColor: setCoatColor(),
-    eyesColor: setEyesColor()
-  }];
-  wizardsArray.push(wizards[i]);
+  };
+
+  wizardsArray.push(wizards);
 }
+  console.log(wizardsArray);
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -87,8 +54,8 @@ var renderWizard = function (wizard) {
 
 var fragment = document.createDocumentFragment();
 
-for (var j = 0; j < wizards.length; j++) {
-  fragment.appendChild(renderWizard(wizards[j]));
+for (var j = 0; j < wizardsArray.length; j++) {
+  fragment.appendChild(renderWizard(wizardsArray[j]));
 }
 
 similarListElement.appendChild(fragment);
