@@ -17,7 +17,7 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
 var getRandom = function (arr) {
   var arrElement = arr[Math.floor(Math.random() * arr.length)];
   return arrElement;
-}
+};
 
 var wizardsArray = [];
 for (var element = 0; element < 8; element++) {
