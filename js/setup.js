@@ -14,28 +14,17 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
   .content
   .querySelector('.setup-similar-item');
 
-
-var setName = function () {
-  var wizardName = WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + WIZARD_SURNAME[Math.floor(Math.random() * WIZARD_SURNAME.length)];
-  return wizardName;
-};
-
-var setCoatColor = function () {
-  var coatColor = COAT_COLOR[Math.floor(Math.random() * COAT_COLOR.length)];
-  return coatColor;
-};
-
-var setEyesColor = function () {
-  var eyesColor = EYES_COLOR[Math.floor(Math.random() * EYES_COLOR.length)];
-  return eyesColor;
-};
+var getRandom = function (arr) {
+  var arrElement = arr[Math.floor(Math.random() * arr.length)];
+  return arrElement;
+}
 
 var wizardsArray = [];
-for (var i = 0; i < 8; i++) {
+for (var element = 0; element < 8; element++) {
   var wizards = {
-    name: setName(),
-    coatColor: setCoatColor(),
-    eyesColor: setEyesColor()
+    name: getRandom(WIZARD_NAMES) + getRandom(WIZARD_SURNAME),
+    coatColor: getRandom(COAT_COLOR),
+    eyesColor: getRandom(EYES_COLOR)
   };
 
   wizardsArray.push(wizards);
