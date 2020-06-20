@@ -40,7 +40,6 @@ for (var i = 0; i < 8; i++) {
 
   wizardsArray.push(wizards);
 }
-  console.log(wizardsArray);
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
