@@ -20,7 +20,7 @@ var getRandom = function (arr) {
 };
 
 var wizardsArray = [];
-for (var element = 0; element < 8; element++) {
+for (var i = 0; i < 8; i++) {
   var magician = {
     name: getRandom(WIZARD_NAMES) + getRandom(WIZARD_SURNAME),
     coatColor: getRandom(COAT_COLOR),
