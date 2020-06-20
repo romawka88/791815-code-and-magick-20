@@ -29,16 +29,39 @@ var getMaxElement = function (arr) {
 };
 
 var setColor = function (ctx, colors, i) {
-    ctx.fillStyle = colors[i];
-}
+  ctx.fillStyle = colors[i];
+};
+
+var printName = function (ctx, players, i) {
+  ctx.fillText(players[i], CLOUD_X + GAP + (TEXT_WIDTH + GAP) * i, CLOUD_Y + GAP + barHeight + FONT_GAP);
+};
 
 var printBar = function (ctx, maxTime, times, i) {
   ctx.fillRect(CLOUD_X + GAP + (TEXT_WIDTH + GAP) * i, CLOUD_HEIGHT - TEXT_HEIGHT - (barHeight * times[i]) / maxTime, BAR_WIDTH, (barHeight * times[i]) / maxTime);
-}
+};
 
 var printTime = function (ctx, maxTime, times, i) {
   ctx.fillText(Math.round(times[i]), CLOUD_X + GAP + (TEXT_WIDTH + GAP) * i, CLOUD_HEIGHT - TEXT_HEIGHT - (barHeight * times[i]) / maxTime - FONT_GAP, BAR_WIDTH, (barHeight * times[i]) / maxTime);
-}
+};
+
+var setStatistics = function (ctx, players, colors, maxTime, times) {
+  for (var i = 0; i < players.length; i++) {
+    ctx.fillStyle = '#000';
+    printName(ctx, players, i);
+    setColor(ctx, colors, i);
+    printBar(ctx, maxTime, times, i);
+    ctx.fillStyle = '#000';
+    printTime(ctx, maxTime, times, i);
+  }
+};
+
+var printMessage = function (ctx) {
+  ctx.fillStyle = '#000';
+  ctx.font = '16px PT Mono';
+  ctx.textBaseline = 'hanging';
+  ctx.fillText('Ура вы победили!', CLOUD_X + 40, CLOUD_Y + 10);
+  ctx.fillText('Список результатов:', CLOUD_X + 40, CLOUD_Y + 30);
+};
 
 window.renderStatistics = function (ctx, players, times) {
   var colors = ['rgba(255, 0, 0, 1)', 'hsl(255, 91%, 29%)', 'hsl(255, 5%, 78%)', 'hsl(255, 22%, 63%)'];
@@ -48,19 +71,8 @@ window.renderStatistics = function (ctx, players, times) {
 
   var maxTime = getMaxElement(times);
 
-  for (var i = 0; i < players.length; i++) {
-    ctx.fillStyle = '#000';
-    ctx.fillText(players[i], CLOUD_X + GAP + (TEXT_WIDTH + GAP) * i, CLOUD_Y + GAP + barHeight + FONT_GAP);
-    setColor(ctx, colors, i);
-    printBar(ctx, maxTime, times, i);
-    ctx.fillStyle = '#000';
-    printTime(ctx, maxTime, times, i);
-  }
+  setStatistics(ctx, players, colors, maxTime, times);
 
-  ctx.fillStyle = '#000';
-  ctx.font = '16px PT Mono';
-  ctx.textBaseline = 'hanging';
-  ctx.fillText('Ура вы победили!', CLOUD_X + 40, CLOUD_Y + 10);
-  ctx.fillText('Список результатов:', CLOUD_X + 40, CLOUD_Y + 30);
+  printMessage(ctx);
 
 };
