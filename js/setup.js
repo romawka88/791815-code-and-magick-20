@@ -21,13 +21,13 @@ var getRandom = function (arr) {
 
 var wizardsArray = [];
 for (var element = 0; element < 8; element++) {
-  var wizard = {
+  var magician = {
     name: getRandom(WIZARD_NAMES) + getRandom(WIZARD_SURNAME),
     coatColor: getRandom(COAT_COLOR),
     eyesColor: getRandom(EYES_COLOR)
   };
 
-  wizardsArray.push(wizard);
+  wizardsArray.push(magician);
 }
 
 var renderWizard = function (wizard) {
